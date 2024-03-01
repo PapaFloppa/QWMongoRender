@@ -30,12 +30,12 @@ app.get('/say/:name', function(req, res) {
 // Route to access database:
 app.get('/api/mongo/:item', function(req, res) {
   const client = new MongoClient(uri);
-  const searchKey = "{ Part: '" + req.params.item + "' }";
+  const searchKey = "{Part: '"+ req.params.item +"' }";
   console.log("Looking for: " + searchKey);
 
 async function run() {
   try {
-    const database = client.db('QWittMongoDB');
+    const database = client.db('Qwitt_DB_Example');
     const parts = database.collection('MyThings');
 
     // Hardwired Query for a part that has partID '12345'
